@@ -1,108 +1,176 @@
-/* styles.css — GLOBAL */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-:root{
-  --bg:#0b1120;
-  --panel:#0f1724;
-  --accent:#22c55e;
-  --blue:#2563eb;
-  --muted:#9ca3af;
-  --text:#e6eef6;
-  --soft:#071024;
+/* styles.css — GLOBAL (tema claro) */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-html,body{
-  height:100%;
-  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  -webkit-font-smoothing:antialiased;
-  background:var(--bg);
-  color:var(--text);
-  font-size:14px;
-  line-height:1.4;
+:root{
+    --bg:       #f3f4f6;  /* gris clarito */
+    --panel:    #ffffff;  /* tarjetas blancas */
+    --accent:   #16a34a;  /* verde principal */
+    --accent-soft: #dcfce7;
+    --blue:     #2563eb;  /* azul para botones/enlaces */
+    --muted:    #6b7280;  /* texto secundario */
+    --text:     #111827;  /* texto principal */
+    --soft:     #e5e7eb;  /* bordes / fondos suaves */
+}
+
+/* Base */
+html, body{
+    height: 100%;
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.4;
 }
 
 /* Header / Nav */
 header{
-  background: linear-gradient(90deg,#16a34a,var(--accent));
-  padding:14px 20px;
-  text-align:center;
-  box-shadow:0 6px 18px rgba(0,0,0,.45);
+    background: linear-gradient(90deg,#16a34a,#22c55e);
+    padding: 16px 20px;
+    text-align: center;
+    box-shadow: 0 4px 14px rgba(15,23,42,0.15);
 }
-header h1{ font-size:20px; color:#fff; letter-spacing:.6px; }
+header h1{
+    font-size: 22px;
+    color: #f9fafb;
+    letter-spacing: .6px;
+}
 
+/* Menú superior */
 nav{
-  display:flex;
-  gap:10px;
-  padding:10px 12px;
-  background:rgba(15,23,42,.96);
-  border-bottom:1px solid rgba(148,163,184,.06);
-  justify-content:center;
-  position:sticky;
-  top:0;
-  z-index:20;
+    display: flex;
+    gap: 10px;
+    padding: 10px 12px 12px;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    box-shadow: 0 2px 10px rgba(15,23,42,0.05);
 }
 nav a{
-  display:inline-block;
-  padding:8px 14px;
-  border-radius:999px;
-  background:rgba(30,64,175,.75);
-  color:var(--text);
-  text-decoration:none;
-  font-weight:600;
-  font-size:14px;
-  transition:transform .12s ease, filter .12s ease;
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: #eff6ff;
+    color: #1e3a8a;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    border: 1px solid #bfdbfe;
+    transition: transform .12s ease, filter .12s ease, box-shadow .12s ease;
 }
-nav a:hover{ transform:translateY(-2px); filter:brightness(1.02); background:var(--accent); color:#04210f; }
+nav a:hover{
+    transform: translateY(-2px);
+    filter: brightness(1.03);
+    background: #22c55e;
+    color: #064e3b;
+    border-color: #16a34a;
+    box-shadow: 0 4px 12px rgba(15,23,42,0.18);
+}
 
-/* Contenedor genérico (dentro del iframe) */
-.contenedor{ padding:12px 14px; }
+/* Contenedor del iframe */
+.contenedor{
+    padding: 14px 16px 18px;
+}
 
 /* IFRAME donde se cargan los JSP */
-iframe {
-    width: 100%;              /* ocupa todo el ancho */
-    height: 600px;            /* ajusta si quieres más alto */
-    border: 1px solid rgba(148,163,184,0.5);
-    border-radius: 12px;
-    background: #020617;      /* fondo oscuro */
-}
-
-/* Card base */
-.card {
-  max-width:1000px;
-  width:calc(100% - 40px);
-  margin:20px auto;
-  background:linear-gradient(180deg, rgba(15,20,32,.6), rgba(10,12,18,.6));
-  border-radius:12px;
-  padding:14px 16px;
-  border:1px solid rgba(148,163,184,.06);
-  box-shadow:0 14px 30px rgba(2,6,23,.45);
-}
-
-/* Buttons global (also used where needed) */
-.btn {
-  display:inline-block;
-  padding:8px 12px;
-  border-radius:999px;
-  text-decoration:none;
-  font-weight:600;
-  font-size:13px;
-  text-align:center;
-}
-.btn-primary{ background:var(--blue); color:var(--text); }
-.btn-success{ background:var(--accent); color:#021025; }
-.btn-danger{ background:#ef4444; color:#fff; }
-.btn-ghost{ background:transparent; color:#9fc0ff; border:1px solid rgba(96,165,250,.08); }
-
-@media (max-width:820px){
-  nav a{ padding:7px 10px; font-size:13px; }
-  .card{ width:calc(100% - 26px); margin:12px auto; padding:12px; }
-  header h1{ font-size:18px; }
-}
-
+iframe,
 .main-frame {
     width: 100%;
-    height: 650px;
-    border: 1px solid rgba(148,163,184,0.5);
+    min-height: 600px; /* importante para que no se haga chiquito */
+    border: 1px solid #d1d5db;
     border-radius: 12px;
-    background: #020617;
+    background: #ffffff;
     display: block;
+}
+
+/* Card genérica (por si se usa fuera) */
+.card{
+    max-width: 1000px;
+    width: calc(100% - 40px);
+    margin: 20px auto;
+    background: var(--panel);
+    border-radius: 12px;
+    padding: 14px 16px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 10px 22px rgba(148,163,184,0.25);
+}
+
+/* Botones globales (pueden usarse en cualquier página) */
+.btn{
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    text-align: center;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: transform .12s ease, filter .12s ease, box-shadow .12s ease;
+}
+.btn-primary{
+    background: var(--blue);
+    color: #f9fafb;
+    border-color: #1d4ed8;
+}
+.btn-success{
+    background: var(--accent);
+    color: #022c22;
+    border-color: #16a34a;
+}
+.btn-danger{
+    background: #ef4444;
+    color: #fff;
+    border-color: #b91c1c;
+}
+.btn-ghost{
+    background: transparent;
+    color: #1d4ed8;
+    border-color: #bfdbfe;
+}
+
+.btn:hover{
+    transform: translateY(-2px);
+    filter: brightness(1.04);
+    box-shadow: 0 8px 18px rgba(15,23,42,0.18);
+}
+
+/* Links por defecto sin subrayado feo */
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Footer sencillo (si llegas a usar) */
+footer{
+    text-align: center;
+    font-size: 12px;
+    color: var(--muted);
+    padding: 8px 0 14px;
+}
+
+/* Responsive simple */
+@media (max-width:820px){
+    nav{
+        flex-wrap: wrap;
+    }
+    nav a{
+        padding: 7px 10px;
+        font-size: 13px;
+    }
+    .card{
+        width: calc(100% - 26px);
+        margin: 12px auto;
+        padding: 12px;
+    }
+    header h1{
+        font-size: 18px;
+    }
 }
