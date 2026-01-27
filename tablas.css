@@ -1,0 +1,153 @@
+/* tablas.css — TABLAS / LISTAS (tema claro) */
+
+.table-card {
+    max-width: 1000px;
+    margin: 18px auto;
+    background: #ffffff;
+    padding: 18px 18px 20px;
+    border-radius: 14px;
+    border: 1px solid #e5e7eb;
+    color: #111827;
+    box-shadow: 0 12px 26px rgba(148,163,184,0.25);
+}
+
+.table-card h2 {
+    margin: 4px 0 14px 0;
+    font-size: 20px;
+    color: #065f46; /* verde oscuro */
+    text-align: center;
+}
+
+/* Tabla principal */
+.tabla-equipos {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 0 auto;
+}
+
+/* Encabezado */
+.tabla-equipos thead th {
+    text-align: left;
+    padding: 10px 12px;
+    background: linear-gradient(90deg,#22c55e,#16a34a);
+    color: #f9fafb;
+    border-bottom: 1px solid #16a34a;
+}
+
+/* Celdas */
+.tabla-equipos tbody td {
+    padding: 9px 12px;
+    border-bottom: 1px solid #e5e7eb;
+    color: #111827;
+}
+
+/* Filas alternadas */
+.tabla-equipos tbody tr:nth-child(even) {
+    background: #f9fafb;
+}
+
+/* Columnas numéricas centradas */
+.tabla-equipos td.numeric,
+.tabla-equipos th.numeric {
+    text-align: center;
+}
+
+/* Acciones */
+.acciones {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Botones en tablas */
+.btn {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 13px;
+    border: 1px solid transparent;
+}
+
+.btn.editar {
+    background: #2563eb;
+    color: #f9fafb;
+    border-color: #1d4ed8;
+}
+.btn.borrar {
+    background: #ef4444;
+    color: #ffffff;
+    border-color: #b91c1c;
+}
+.btn.nuevo {
+    background: #22c55e;
+    color: #022c22;
+    border-color: #16a34a;
+    padding: 8px 12px;
+    margin-top: 8px;
+}
+
+/* Hover en botones de tabla */
+.btn:hover {
+    filter: brightness(1.05);
+    transform: translateY(-1px);
+}
+
+/* Mensaje de error */
+.error {
+    color: #b91c1c;
+    background: #fee2e2;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #fecaca;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* ===== DASHBOARD ESTADÍSTICAS ===== */
+.stats-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 14px;
+}
+
+.stat-card{
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 14px 14px;
+    box-shadow: 0 10px 22px rgba(148,163,184,0.22);
+    text-align: center;
+}
+
+.stat-title{
+    font-size: 13px;
+    color: #6b7280;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.stat-value{
+    font-size: 26px;
+    font-weight: 900;
+    color: #065f46;
+    letter-spacing: .5px;
+}
+
+.stat-sub{
+    margin-top: 6px;
+    font-size: 12px;
+    color: #374151;
+    font-weight: 600;
+}
+
+@media (max-width: 900px){
+    .stats-grid{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 520px){
+    .stats-grid{ grid-template-columns: 1fr; }
+}
+

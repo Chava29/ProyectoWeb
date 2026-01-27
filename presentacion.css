@@ -1,0 +1,97 @@
+/* presentacion.css — página de presentación (tema claro) */
+
+body {
+    margin: 0;
+    padding: 24px;
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #ece8e8;                 /* igual que el resto */
+    color: #111827;
+}
+
+/* Tarjeta principal */
+.card {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #f5f2f2;
+    border-radius: 18px;
+    padding: 24px 26px;
+    box-shadow: 0 18px 40px rgba(148,163,184,0.4);
+    border: 1px solid #e5e7eb;
+}
+
+/* Badge superior (PROYECTO CRUD · JDBC · MYSQL) */
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: #118539;      /* verde clarito */
+    color: #166534;           /* verde oscuro */
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+/* Título principal */
+.card h1 {
+    margin-top: 0;
+    font-size: 26px;
+    margin-bottom: 8px;
+    color: #065f46;           /* verde oscuro, igual que en formularios */
+    text-align: center;
+}
+
+/* Párrafo introductorio */
+.lead {
+    font-size: 14px;
+    color: #4b5563;
+    margin-bottom: 18px;
+    text-align: justify;
+}
+
+/* Encabezados de sección */
+.card h2 {
+    margin-top: 16px;
+    margin-bottom: 8px;
+    font-size: 18px;
+    color: #1d4ed8;           /* azul igual que botones/tablas */
+}
+
+/* Listas */
+ul {
+    margin-top: 8px;
+    padding-left: 20px;
+    font-size: 14px;
+}
+
+li {
+    margin-bottom: 4px;
+}
+
+/* Texto resaltado */
+.highlight {
+    background: #fef9c3;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+/* Etiquetas pequeñas (si las usas para tecnologías, etc.) */
+.tag {
+    display: inline-block;
+    margin-right: 6px;
+    margin-bottom: 6px;
+    padding: 4px 8px;
+    border-radius: 999px;
+    font-size: 11px;
+    background: #eff6ff;
+    color: #1e3a8a;
+}
+
+/* Texto final al pie de la tarjeta */
+.footer-text {
+    margin-top: 16px;
+    font-size: 12px;
+    color: #6b7280;
+    text-align: right;
+}
